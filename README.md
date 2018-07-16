@@ -115,6 +115,4 @@ qid should be a str type, e.g. '51'
 * q_len: max query length (num of query terms)
 * d_len: max document length (num of document terms)
 
-* 
-
 
