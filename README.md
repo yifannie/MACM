@@ -63,3 +63,24 @@ To test the model, pass the config file path, mode into command line
 python macm_train.py --path: path to the config file \
 --mode test  (train or test) 
 ```
+
+## Data Preprocessing
+All queries and documents should be encoded into sequences of integer term ids, term id should begin with 1, where 1 indicates OOV term.
+Training data should be stored in python dict with the following structure:
+```
+data = {
+   qid:{'query': [257, 86, 114],
+        'docs': [[123, 456, 6784...], [235, 345, 768,...],...]
+        'scores': [25.16, 16.83, ...]
+   }
+}
+```
+Validation or testing data should be stored in python dict with the following structure:
+```
+test_data = {
+  qid:{'query': [257, 86, 114],
+       'docs': [[123, 456, 6784...], [235, 345, 768,...],...]
+       'scores': [25.16, 16.83, ...]
+  }
+}
+'''
