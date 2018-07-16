@@ -85,6 +85,36 @@ test_data = {
        'docno': ['clueweb09-en0000-00-00000', 'clueweb09-en0000-00-00001'...]
   }
 }
-```
+``` 
 qid should be a str type, e.g. '51'
+
+## Configurations
+
+* model_name_str: model folder's name
+* batch_size: batchsize
+* vocab_size: vocabulary size
+* emb_size: embedding size
+* n_gramsets: num of parallel convolutions with different filter size for each conv layer, should be set to 1 for the MACM model
+* n_filters1: num of filters for the first conv layer, should be in brackets, e.g. [32]
+* n_filters2: num of filters for the second conv layer, should be in brackets, e.g. [16]
+* kernel_sizes1: filter shape of conv layer 1
+* kernel_sizes2: filter shape of conv layer 2
+* conv_strides: stride for all the conv layers
+* pool_sizes0: pooling size for the interaction matrix
+* pool_sizes1: pooling size for the 1st conv layer
+* pool_sizes2: pooling size for the 2nd conv layer
+* pool_strides: stride for all pooling operactions
+* n_hiddden_layers: num of hidden layers in the flattened MLP after each conv layer
+* hidden_sizes: hidden size for mlp hidden layers
+* hinge_margin: hinge margin for pairwise training loss
+* train_datablock_size: training data block size to store a block of training examples in RAM during training
+* q_sample_size: training query sampling size if using sampling to sample a subset of training queries
+* docpair_sample_size: document pair sampling size if using sampling to sample a subset of training samples
+* n_epoch: max num of epochs
+* alpha: L2 normalization weight
+* q_len: max query length (num of query terms)
+* d_len: max document length (num of document terms)
+
+* 
+
 
