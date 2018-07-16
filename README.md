@@ -100,7 +100,8 @@ A set of pre-trained embeddings should also be specified to input into the model
 * n_filters2: num of filters for the second conv layer, should be in brackets, e.g. [16]
 * kernel_sizes1: filter shape of conv layer 1
 * kernel_sizes2: filter shape of conv layer 2
-* conv_strides: stride for all the conv layers
+* conv_strides1: stride for the 1st conv layer
+* conv_strides2: stride for the 2nd conv layer
 * pool_sizes0: pooling size for the interaction matrix
 * pool_sizes1: pooling size for the 1st conv layer
 * pool_sizes2: pooling size for the 2nd conv layer
