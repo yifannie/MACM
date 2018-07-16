@@ -75,12 +75,16 @@ data = {
    }
 }
 ```
+qid should be a str type, e.g. '31'
+
 Validation or testing data should be stored in python dict with the following structure:
 ```
 test_data = {
   qid:{'query': [257, 86, 114],
        'docs': [[123, 456, 6784...], [235, 345, 768,...],...]
-       'scores': [25.16, 16.83, ...]
+       'docno': ['clueweb09-en0000-00-00000', 'clueweb09-en0000-00-00001'...]
   }
 }
 '''
+qid should be a str type, e.g. '51'
+
