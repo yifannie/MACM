@@ -88,6 +88,7 @@ test_data = {
 ``` 
 qid should be a str type, e.g. '51'
 
+A set of pre-trained embeddings should also be specified to input into the model. In this paper we employed [GloVe6B.300d](https://nlp.stanford.edu/projects/glove/), you can also train models like word2vec on your own corpus. The embedding data should be a pickled file containging an embedding matrix of shape [vocab_size, emb_dim] of data type float32, and stored under the base_data_path (configured in the config file).
 ## Configurations
 
 * model_name_str: model folder's name
@@ -114,5 +115,7 @@ qid should be a str type, e.g. '51'
 * alpha: L2 normalization weight
 * q_len: max query length (num of query terms)
 * d_len: max document length (num of document terms)
+* model_base_path: full path to the parent folder of the model folder (i.e. if model folder is located in /scratch/models/macm, this base path should be /scratch/models/)
+* data_base_path: full path to the parent folder of the training data folder (i.e. if the train data folder is located in /scratch/data/train/, this base path should be /scratch/data/)
 
 
