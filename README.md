@@ -1,4 +1,4 @@
-# MACM
+## MACM
 
 This in the implementation of the Multi-level Abstraction Convolutional Model (MACM) in the paper [Multi-level Abstraction Convolutional Model for Information Retrieval with Weak Supervision](https://dl.acm.org/citation.cfm?id=3210123)
 
@@ -24,4 +24,9 @@ year      = {2018}
 }
 ```
 
-# 
+# prerequisites
+
+* Python 3.6.3
+* Tensorflow 1.3.1
+* Numpy
+
