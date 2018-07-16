@@ -1,4 +1,4 @@
-## MACM
+# MACM
 
 This in the implementation of the Multi-level Abstraction Convolutional Model (MACM) in the paper [Multi-level Abstraction Convolutional Model for Information Retrieval with Weak Supervision](https://dl.acm.org/citation.cfm?id=3210123)
 
@@ -24,15 +24,15 @@ year      = {2018}
 }
 ```
 
-# prerequisites
+## prerequisites
 
 * Python 3.6.3
 * Tensorflow 1.3.1
 * Numpy
 
-# Usage
+## Usage
 
-Congigure: first, configure the hyperparameter through the config file, a sample is provided
+### Congigure: first, configure the hyperparameter through the config file, a sample is provided
 
 [sample.config](https://github.com/yifannie/MACM/blob/master/sample.config)
 
@@ -46,4 +46,20 @@ model
 ..\saves
 ..\tmp
 
+```
+
+### Train
+
+To train the model, pass the config file path, mode, and resume flag into command line
+```
+python macm_train.py --path: path to the config file \
+--mode train  (train or test) \
+--resume False  (whether to resume training from the saved model or train for a brand new model)
+```
+
+### Test
+To test the model, pass the config file path, mode into command line
+```
+python macm_train.py --path: path to the config file \
+--mode test  (train or test) 
 ```
