@@ -360,7 +360,7 @@ def train(config_path, resume_training=False):
                     # run optimizer on this batch
                     sess.run(train_op, feed_dict={x_q: Q, x_d_pos: D_pos, x_d_neg: D_neg, l: L, keep_prob: 1.0})
                     cost_value = sess.run(cost, feed_dict={x_q: Q, x_d_pos: D_pos, x_d_neg: D_neg, l: L, keep_prob: 1.0})
-                    batch_count_tr +=1
+                    batch_count_tr += 1
                     print("epoch {} batch {} training cost: {}, param_norm: , grad_norm: , w_weight_norm: , w_grad_norm: " \
                     .format(epoch, batch_count_tr, cost_value))
                     f_log.write("epoch {} batch {} training cost: {}".format(epoch, batch_count_tr, cost_value) + '\n')
@@ -398,15 +398,10 @@ def validation(sess, placeholder_list, data_base_path, model_base_path,
     q_len = 15
     d_len = d_len
     '''VALID DIR'''
-    if dataset == "ClueWeb":
-        TEST_DIR = '{}/valid/WT0912/'.format(data_base_path)
-        RESULTS_DIR = '{}/{}/result/valid/'.format(model_base_path, model_name_str)
-        test_files = glob.glob("{}/data*.pkl".format(TEST_DIR))
-    if dataset == "Robust":
-        TEST_DIR = '{}/valid/'.format(data_base_path)
-        RESULTS_DIR = '{}/{}/result/valid/'.format(model_base_path, model_name_str)
-        test_files = glob.glob("{}/data*.pkl".format(TEST_DIR))
-
+    TEST_DIR = '{}/valid/WT0912/'.format(data_base_path)
+    RESULTS_DIR = '{}/{}/result/valid/'.format(model_base_path, model_name_str)
+    test_files = glob.glob("{}/data*.pkl".format(TEST_DIR))
+    
     '''build model'''
     # model = pointmodel(vocab_size=vocab_size, emb_dim=emb_dim, num_hidden_layers=num_hidden_layers, hidden_size=hidden_size)
     # placeholders
@@ -492,18 +487,11 @@ def test(model_path, config_path, compute_ndcg_flag=True):
     # model and data base paths
     data_base_path = config['hyperparams']['data_base_path']
     model_base_path = config['hyperparams']['model_base_path']
-    # dataset
-    dataset = config['hyperparams']['dataset']
 
     '''TEST DIR'''
-    if dataset == "ClueWeb":
-        TEST_DIR = '{}/test51-200/WT0912/'.format(data_base_path)
-        RESULTS_DIR = '{}/{}/result/test/'.format(model_base_path, model_name_str)
-        test_files = glob.glob("{}/data*.pkl".format(TEST_DIR))
-    if dataset == "Robust":
-        TEST_DIR = '{}/test/'.format(data_base_path)
-        RESULTS_DIR = '{}/{}/result/test/'.format(model_base_path, model_name_str)
-        test_files = glob.glob("{}/data*.pkl".format(TEST_DIR))
+    TEST_DIR = '{}/test51-200/WT0912/'.format(data_base_path)
+    RESULTS_DIR = '{}/{}/result/test/'.format(model_base_path, model_name_str)
+    test_files = glob.glob("{}/data*.pkl".format(TEST_DIR))
     '''build model'''
 
     '''build model'''
