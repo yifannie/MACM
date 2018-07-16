@@ -85,6 +85,6 @@ test_data = {
        'docno': ['clueweb09-en0000-00-00000', 'clueweb09-en0000-00-00001'...]
   }
 }
-'''
+```
 qid should be a str type, e.g. '51'
 
