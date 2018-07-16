@@ -30,3 +30,20 @@ year      = {2018}
 * Tensorflow 1.3.1
 * Numpy
 
+# Usage
+
+Congigure: first, configure the hyperparameter through the config file, a sample is provided
+
+[sample.config](https://github.com/yifannie/MACM/blob/master/sample.config)
+
+A fold for saving models should be created on local disk and should contain the config file and 4 sub-folders:
+
+```
+model
+..\config
+..\logs
+..\result
+..\saves
+..\tmp
+
+```
